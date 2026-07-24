@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Page Pulse checks a public URL and returns a fast, structured audit." />
+    <title>Page Pulse — URL audit</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">PAGE PULSE / URL AUDIT</p>
+        <h1>Know what your page is doing <span>before your users do.</span></h1>
+        <p class="lede">A small, resilient URL audit service with timeouts, safe target validation, bounded concurrency, caching, and honest errors.</p>
+        <form id="audit-form" class="audit-form">
+          <label for="url">Public URL</label>
+          <div class="input-row">
+            <input id="url" name="url" type="url" placeholder="https://example.com" autocomplete="url" required />
+            <button type="submit">Audit page <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="hint">Only public HTTP(S) targets are accepted. Results are cached briefly to avoid duplicate fetches.</p>
+        </form>
+      </section>
+
+      <section id="result" class="result-panel" aria-live="polite" hidden>
+        <div class="result-heading">
+          <p class="eyebrow">AUDIT RESULT</p>
+          <span id="cache-badge" class="badge"></span>
+        </div>
+        <div id="result-content"></div>
+      </section>
+
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <footer>
+        <span>Page Pulse</span>
+        <a href="https://digitalheroesco.com" target="_blank" rel="noreferrer">Built for Digital Heroes Training Task</a>
+      </footer>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
