@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "rewrites": [
+    { "source": "/api/:match*", "destination": "/src/app.ts" },
+    { "source": "/audit", "destination": "/src/app.ts" },
+    { "source": "/healthz", "destination": "/src/app.ts" },
+    { "source": "/readyz", "destination": "/src/app.ts" }
+  ]
+}
